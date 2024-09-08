@@ -78,3 +78,6 @@ fabric.properties
 # Python
 __pycache__/
 *.py[cod]
+
+# VS Code configuration
+.vscode
