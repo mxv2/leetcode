@@ -12,14 +12,12 @@ class Solution:
         if head == None:
             return False
         
-        seenNodes = set()
-        while head != None:
-            addr = id(head)
-            if addr in seenNodes:
-                return True
-            else:
-                seenNodes.add(addr)
+        fast = slow = head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
             
-            head = head.next    
+            if fast == slow:
+                return True
         
         return False
